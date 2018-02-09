@@ -10,7 +10,7 @@ This is an API for a chat application written in Node.js express. It uses mongod
 First, you need to start mongodb.
 - Open a terminal.
 - Create a folder `mkdir <folder-location>/data/db`
-- Run `mongo --dbpath=<folder-location>/data/db`
+- Run `mongod --dbpath=<folder-location>/data/db`
 
 Run the app.
 - Open a new teminal.
