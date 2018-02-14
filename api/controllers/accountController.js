@@ -18,12 +18,20 @@ const login = (request, response) => {
         status: 'NOT_OK',
         message: `Missing ${fields[i]}`,
       });
+      return;
     }
   }
 
   const { username, password } = request.body;
 
   User.findOne({ username }, (error, user) => {
+    if(!user) {
+      response.status(409).json({
+        status: 'NOT_OK',
+        message: 'Authentication failed',
+      });
+      return;
+    }
     bcrypt.compare(password, user.password, (error, isValid) => {
       if (isValid){
         const expiry = new Date().getTime() + (3600 * 24 * 7);
