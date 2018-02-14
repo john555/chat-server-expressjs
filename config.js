@@ -1,17 +1,22 @@
 const port = process.env.PORT || 3000;
-const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV || 'development';
 
-let databaseUrl = 'mongodb://localhost/chatDb';
-if (env === 'test') {
-  databaseUrl = 'mongodb://localhost/chatDbTest';
+const config = {
+  development: {
+    databaseUrl: 'mongodb://localhost/chatDbDev',
+    appUrl: `http://localhost:${port}`,
+    port,
+  },
+  testing: {
+    databaseUrl: 'mongodb://localhost/chatDbTest',
+    appUrl: `http://localhost:${port}`,
+    port,
+  },
+  production: {
+    databaseUrl: 'mongodb://localhost/chatDb',
+    appUrl: `http://localhost:${port}`,
+    port,
+  }
 }
 
-if (env === 'development') {
-  databaseUrl = 'mongodb://localhost/chatDbDev';
-}
-
-module.exports = {
-  databaseUrl,
-  appUrl: `http://localhost:${port}`,
-  port,
-};
+module.exports = config[env];
