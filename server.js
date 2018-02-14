@@ -1,4 +1,5 @@
 const express = require('express');
+const feathers = require('@feathersjs/express');
 const compression = require('compression');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -9,7 +10,7 @@ const connectionManager = require('./middlewares/connectionManager');
 const routes = require('./routes');
 const { port, appUrl } = require('./config');
 
-const app = express();
+const app = express(feathers());
 
 mongoose.connection.on('error', console.error.bind(console, 'Mongoose: Connection error.'));
 mongoose.connection.once('open', console.log.bind(console, 'Mongoose: Connection opened.'));

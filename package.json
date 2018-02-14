@@ -5,11 +5,13 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "NODE_ENV=development nodemon server.js",
-    "test": "NODE_ENV=development mocha"
+    "test": "NODE_ENV=testing mocha"
   },
   "author": "John O. Paul",
   "description": "",
   "dependencies": {
+    "@feathersjs/express": "^1.2.0",
+    "bcrypt": "^1.0.3",
     "chai": "^4.1.2",
     "compression": "^1.7.1",
     "express": "^4.16.2",
