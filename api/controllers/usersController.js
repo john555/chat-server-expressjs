@@ -1,5 +1,5 @@
 const { User } = require('../models');
-const { isRequired, minLength } = require('../helpers/validation');
+const { isRequired, minLength } = require('../../helpers/validation');
 
 const createUser = (request, response) => {
   const fields = ['firstName', 'lastName', 'username', 'password'];

@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { isRequired, minLength } =  require('../helpers/validation');
+const { isRequired, minLength } =  require('../api/helpers/validation');
 
 describe('helpers/validation', () => {
   describe('isRequired helper', () => {
