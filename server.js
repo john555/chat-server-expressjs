@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', routes.indexRoute);
-app.use('/api/v1', connectionManager(mongoose)); 
+app.use('/api/v1/*', connectionManager(mongoose)); 
 app.use('/api/v1', api);
 
 

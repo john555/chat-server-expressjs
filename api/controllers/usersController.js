@@ -40,7 +40,6 @@ const createUser = (request, response) => {
 
   user.save((error, user) => {
     if (error) {
-      // console.log('bbbb', error);
       response.status(409).json({
         status: 'NOT_OK',
         message: 'Username is taken'

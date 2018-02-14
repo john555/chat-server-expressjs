@@ -1,6 +1,7 @@
 const express = require('express');
 
 const userRoutes = require('./userRoutes');
+const accountRoutes = require('./accountRoutes');
 
 const indexRoute = express.Router();
 
@@ -10,5 +11,6 @@ indexRoute.get('/', (request, response) => {
 
 module.exports = {
   indexRoute,
-  userRoutes
+  userRoutes,
+  accountRoutes,
 };
