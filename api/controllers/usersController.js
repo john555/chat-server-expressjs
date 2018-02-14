@@ -51,6 +51,7 @@ const createUser = (request, response) => {
       response.status(201).json({
         status: 'OK',
         user: {
+          id: user._id,
           firstName: user.firstName,
           lastName: user.lastName,
           username: user.username,

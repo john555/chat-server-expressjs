@@ -29,7 +29,13 @@ const login = (request, response) => {
         const expiry = new Date().getTime() + (3600 * 24 * 7);
         const payload = {
           expiry,
-          id: user._id,
+          user: {
+            id: user._id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            username: user.username,
+            createdAt: user.createdAt
+          },
         }
         
         response.json({
