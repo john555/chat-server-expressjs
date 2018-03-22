@@ -2,6 +2,7 @@ const express = require('express');
 
 const userRoutes = require('./userRoutes');
 const accountRoutes = require('./accountRoutes');
+const messageRoutes = require('./messageRoutes');
 
 const indexRoute = express.Router();
 
@@ -13,4 +14,5 @@ module.exports = {
   indexRoute,
   userRoutes,
   accountRoutes,
+  messageRoutes,
 };
