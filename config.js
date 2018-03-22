@@ -13,6 +13,12 @@ const config = {
     port,
     secret,
   },
+  staging: {
+    databaseUrl: 'mongodb://localhost/chatDbStaging',
+    appUrl: `http://localhost:${port}`,
+    port,
+    secret,
+  },
   testing: {
     databaseUrl: 'mongodb://localhost/chatDbTest',
     appUrl: `http://localhost:${port}`,
